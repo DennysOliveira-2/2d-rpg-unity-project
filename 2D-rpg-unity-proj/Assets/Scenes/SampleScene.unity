@@ -5963,8 +5963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e43e8e0263963d444b6d7d0913c6c07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  information:
-    name: Bardo
+  entity:
+    name: Bardsnight
     currentHealth: 100
     maxHealth: 100
     currentMana: 100
@@ -5976,6 +5976,10 @@ MonoBehaviour:
     damage: 1
     defense: 1
     speed: 1
+  healthSlider: {fileID: 1054172692}
+  manaSlider: {fileID: 221554320}
+  staminaSlider: {fileID: 1133967926}
+  expSlider: {fileID: 981059957}
 --- !u!1 &502994011
 GameObject:
   m_ObjectHideFlags: 0

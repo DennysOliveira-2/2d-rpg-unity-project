@@ -37,15 +37,31 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetFloat("input_x", input_x);
             playerAnimator.SetFloat("input_y", input_y);
 
+            // Run ability - LShift
+            if (player.entity.currentStamina >= 1)
+            {
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    player.entity.speed += 1;                    
+                }
+
+                if(Input.GetKeyUp(KeyCode.LeftShift))
+                    player.entity.speed -= 1;    
+            }
+            
         }
         playerAnimator.SetBool("isWalking", isWalking);
 
         if (Input.GetButtonDown("Fire1"))
             playerAnimator.SetTrigger("attack");
+
+        
+        
+            
     }
 
     private void FixedUpdate()
     {
-        rb2D.MovePosition(rb2D.position + movement * player.information.speed * Time.fixedDeltaTime);
+        rb2D.MovePosition(rb2D.position + movement * player.entity.speed * Time.fixedDeltaTime);
     }
 }
